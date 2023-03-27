@@ -1,0 +1,10 @@
+Angular nous offre deux approches pour gerer nos formulaires
+
+1) Template-driven:
+On realise notre formulaire en code HTML, et Angular deduit
+la structure de notre formulaire, deduit comme serait son fonctionnement
+"NgForm"
+
+2) Reactif:
+Ici on definit la structure de notre formulaire en code typescript,
+aussi en HTML, et on, les connecte manuellement. Ceci nous donne un control total   

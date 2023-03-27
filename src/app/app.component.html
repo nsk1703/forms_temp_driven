@@ -1,0 +1,120 @@
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2"> -->
+      <!-- #f est comme une reference locale (#f="NgForm)
+          email est un attribut Angular qui dirait ce champ est une adresse mail
+        Notre formulaire possede plusieurs attributs  qui nous permet d'interagir
+        avec lui dans des cas precis
+      -->
+
+      <!-- <form (ngSubmit)="onSubmit()" ">
+        <div id="user-data">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input 
+              type="text" 
+              id="username" 
+              name="username"
+              required
+              class="form-control">
+          </div>
+          <button class="btn btn-default" type="button">Suggest an Username</button>
+          <div class="form-group">
+            <label for="email">Mail</label>
+            <input 
+              type="email" 
+              id="email" 
+              ngModel
+              name="email"
+              required
+              class="form-control"
+              email
+            >
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="secret">Secret Questions</label>
+          <select 
+            id="secret" 
+            class="form-control"
+            name="select"
+            ngModel
+          >
+            <option value="pet">Your first Pet?</option>
+            <option value="teacher">Your first teacher?</option>
+          </select>
+        </div>
+        <button 
+          class="btn btn-primary" 
+          type="submit"
+          [disabled]="!f.valid"
+          >Submit</button>
+      </form> -->
+    <!-- </div>
+  </div>
+</div>  -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <form [formGroup]="addForm">
+        <div id="user-data">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input 
+              type="text" 
+              id="username"
+              class="form-control"
+              formControlName="username">
+              <!-- <span *ngIf="username.invalid && addForm.username.touched" class="help-block">
+                Please enter a valid username</span> -->
+          </div>
+          <!-- <button class="btn btn-default" type="button">Suggest an Username</button> -->
+          <div class="form-group">
+            <label for="email">Mail</label>
+            <input 
+              type="text" 
+              id="email" 
+              class="form-control"
+              formControlName="email"
+            >
+            <!-- <div *ngIf="!addForm.email.valid && adForm.email.touched" class="help-block">
+              Please enter a valid email
+            </div> -->
+            <div *ngIf="frm.email.errors?.required" class="help-block">
+               Email is required!
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="secret">Secret Questions</label>
+          <select 
+            id="secret" 
+            class="form-control"
+            formControlName="question"
+          >
+            <option value="pet">Your first Pet?</option>
+            <option value="teacher">Your first teacher?</option>
+          </select>
+        </div>
+        <div class="radio" *ngFor="let gender of genders">
+          <label>
+            <input 
+              type="radio"
+              [value]="gender"
+              formControlName="gender"
+              >
+            {{gender}}
+          </label>
+        </div>
+        <!-- <span *ngIf="!addForm.valid && addForm.touched" class="help-block">
+          Please enter a valid username</span> -->
+        <button 
+          class="btn btn-primary" 
+          type="submit"
+          (click)="onSubmit()"
+          >Submit</button>
+      </form>
+    </div>
+  </div>
+</div> 

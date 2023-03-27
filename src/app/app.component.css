@@ -1,0 +1,9 @@
+.container {
+  margin-top: 30px;
+}
+
+/* Angular nous procure des attributs CSS */
+/* 
+input.ng-invalid.ng-touched{
+  border: 1px solid red
+} */
